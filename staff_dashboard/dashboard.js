@@ -3,29 +3,26 @@ const addBtn = document.getElementById("Add");
 const closeBtn = document.querySelector(".close");
 const saveBtn = document.getElementById("save");
 const tdata = document.getElementById("tContain");
+const searchInput = document.getElementById("search");
 
-let editingIndex = null; // Track row being edited
+let editingIndex = null;
 
-// Open popup for new item
 addBtn.onclick = () => {
-  editingIndex = null; // reset editing
+  editingIndex = null;
   modal.style.display = "flex";
   resetForm();
 };
 
-// Close popup
 closeBtn.onclick = () => {
   modal.style.display = "none";
 };
 
-// Close when clicking outside modal
 window.onclick = (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
   }
 };
 
-// Save button click
 saveBtn.onclick = () => {
   if (editingIndex === null) {
     saveItem();
@@ -53,14 +50,11 @@ function saveItem() {
     status: "Available"
   };
 
-  // Save to localStorage
   const savedItems = JSON.parse(localStorage.getItem("menuItems")) || [];
   savedItems.push(newItem);
   localStorage.setItem("menuItems", JSON.stringify(savedItems));
 
   renderTable();
-
-  // Close and reset form
   modal.style.display = "none";
   resetForm();
 }
@@ -92,14 +86,10 @@ function toggleStatus(index) {
   let savedItems = JSON.parse(localStorage.getItem("menuItems")) || [];
   if (!savedItems[index]) return;
 
-  // Flip between Available and Unavailable
   savedItems[index].status =
     savedItems[index].status === "Available" ? "Unavailable" : "Available";
 
-  // Save back
   localStorage.setItem("menuItems", JSON.stringify(savedItems));
-
-  // Refresh table to reflect change
   renderTable();
 }
 
@@ -108,16 +98,12 @@ function editItem(index) {
   const item = savedItems[index];
   if (!item) return;
 
-  // Pre-fill form
   document.getElementById("name").value = item.name;
   document.getElementById("price").value = item.price;
   document.getElementById("category").value = item.category;
   document.getElementById("description").value = item.description;
 
-  // Open popup
   modal.style.display = "flex";
-
-  // Set editing mode
   editingIndex = index;
 }
 
@@ -131,7 +117,7 @@ function saveEdit() {
 
   const savedItems = JSON.parse(localStorage.getItem("menuItems")) || [];
   savedItems[editingIndex] = {
-    ...savedItems[editingIndex], // keep status
+    ...savedItems[editingIndex],
     name: nameValue,
     price: priceValue,
     category: categoryValue,
@@ -139,18 +125,23 @@ function saveEdit() {
   };
 
   localStorage.setItem("menuItems", JSON.stringify(savedItems));
-
   renderTable();
-
   modal.style.display = "none";
   editingIndex = null;
   resetForm();
 }
 
-function renderTable() {
+function renderTable(filter = "") {
   tdata.innerHTML = "";
   const savedItems = JSON.parse(localStorage.getItem("menuItems")) || [];
-  savedItems.forEach((item, index) => addRowToTable(item, index));
+  savedItems
+    .filter(
+      (item) =>
+        item.name.toLowerCase().includes(filter) ||
+        item.category.toLowerCase().includes(filter) ||
+        item.description.toLowerCase().includes(filter)
+    )
+    .forEach((item, index) => addRowToTable(item, index));
 }
 
 function resetForm() {
@@ -160,7 +151,11 @@ function resetForm() {
   document.getElementById("description").value = "";
 }
 
-// Load table when page loads
 window.onload = () => {
   renderTable();
 };
+
+searchInput.addEventListener("input", () => {
+  const term = searchInput.value.trim().toLowerCase();
+  renderTable(term);
+});
