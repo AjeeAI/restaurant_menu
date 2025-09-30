@@ -1,0 +1,314 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    /* width: 100%; */
+    /* height: 100vh; */
+    background-color: rgb(247, 244, 244);
+    /* display: flex;
+    flex-direction: column; */
+
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-areas: "header header header header"
+    "sidebar menu menu menu"
+    "footer footer footer footer";
+    grid-template-columns: 350px 1fr 1fr 1fr; /* sidebar fixed, menu flexible */
+    grid-template-rows: auto 1fr auto;
+    /* height: 100vh; */
+    /* grid-template-columns: 1fr 3fr;
+    grid-template-rows: 50px auto 50px; */
+}
+
+
+.grid-container header{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    grid-area: header;
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgb(6, 5, 41);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 1px 2px;
+}
+
+.header-left{
+    
+    font-size: 25px;
+    font-weight: bold;
+    font-family:'inter', cursive;
+}
+.header-right{
+    display: flex;
+    /* justify-content: end; */
+    gap: 30px;
+    font-size: 25;
+    font-weight: bold;
+    padding-right: 30px;
+
+}
+
+.header-right .pic{
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: grey;
+}
+
+
+.sidebar {
+    /* background-color: white; */
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+
+    text-align: left;
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+.sidebar-top{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.sidebar-heading{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.sidebar button{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+}
+
+.footer-button{
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    
+    margin-left: 30px;
+   
+}
+
+.footer-button button{
+    width: 200px;
+    height: 40px;
+     background-color: #EC8013;
+     text-align: center;
+}
+
+
+
+.menu {
+    display: flex;
+    grid-area: menu;
+    flex-direction: column;
+    gap:30px;
+    /* background-color: blue; */
+    color: black;
+    height: 100vh;
+    align-items: start;
+    padding: 20px;
+    margin-right: 20px;
+
+}
+#search {
+    /* margin: auto;
+    width: 100%; */
+    height: 50px;
+}
+.search-div{
+    width: 100%;
+    
+}
+.menu input{
+    width: 100%;
+    height: 35px;
+    border-radius: 8px;
+    padding-left: 10px;
+}
+
+.table-div {
+    width: 100%;
+    height: fit-content;
+    border: 2px solid grey;
+    /* overflow-x: auto;  */
+}
+
+table {
+    width: 100%;
+    height: fit-content;
+    border-collapse: collapse;
+    table-layout: fixed; 
+    color: #000;
+}
+
+thead {
+    background-color: #f5f5f5;
+}
+
+th, td {
+    border: 1px solid grey;
+    padding: 10px;
+    text-align: center; /* center align headers & body cells */
+}
+
+td:first-child {
+    text-align: center; /* image column stays centered */
+}
+
+table img {
+    border-radius: 50%;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+table button {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: chocolate;
+}
+
+.button2 {
+     width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+}
+
+.chtext-color{
+    color: chocolate;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+form .header-text{
+    font-size: 30px;
+    font-weight: bold;
+    color: #6C6761;
+}
+
+form .colored-text{
+    color: #C3AC95;
+}
+
+form button {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 20px;
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #EC8013;
+}
+
+.btn{
+    display: flex;
+    justify-content: end;
+    margin-top: 40px;
+}
+
+form label {
+    color: black;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+form input{
+    padding-top: 10px;
+    background-color: #F3EDE7;
+    
+    height: 30px;
+}
+
+form select{
+    padding-top: 10px;
+    background-color: #F3EDE7;
+    border-radius: 15px;
+    height: 50px;
+    padding-left: 10px;
+    
+}
+
+#description{
+    padding-top: 0px;
+    background-color: #F3EDE7;
+    
+    height: 100px;
+   
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #F3EDE7;
+}
+
+
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); /* overlay */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 75%;      /* take up 75% of page width */
+  height: 75%;     /* take up 75% of page height */
+  overflow-y: auto; /* allow scrolling if form is long */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+

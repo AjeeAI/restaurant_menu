@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel = "stylesheet" href = "dashboard.css">
+    <script src = "dashboard.js" defer> </script>
+</head>
+<body>
+    <div class = "grid-container">
+        <header>
+            <div class = "header-left">
+                Dine in
+            </div>
+
+            <div class = "header-right">
+                <p>
+                    Menu
+                </p>
+                <p>
+                    Orders
+                </p>
+
+                <p>
+                    Inventory
+                </p>
+
+                <p>
+                    Staff
+                </p>
+
+                <img src="./assets/bell_icon.png" alt="bell icon">
+                <img src="./assets/female1.jpeg" alt="face of a woman" class="pic">
+            </div>
+        </header>
+
+        <div class = "sidebar">
+            <div class = "sidebar-top">
+                <button class = "sidebar-heading">
+                Menu Items
+            </button>
+            <button class = "sidebar-heading">
+                Categories
+            </button>
+
+            <button class = "sidebar-heading">
+                Modifiers
+            </button>
+
+            <button class = "sidebar-heading">
+                Discount
+            </button>
+
+         
+    </div>
+      <div class = "footer-button">
+       <button id = "Add"> Add Item</button>
+            </div>
+        </div>
+    
+    <div class = "menu">
+        <h2>
+            Menu Items
+        </h2>
+        <p>
+            Manage your menu items, categories, modifiers and discounts.
+        </p>
+
+        <div class = "search-div">
+            <input id = "search" type="text" placeholder="Search menu items">
+        </div>
+    
+    <div class = "table-div">
+        <table id = "table-data">
+            <thead>
+                <tr>
+                    <th>Item</th>
+
+                <th> Category</th>
+                <th> Price</th>
+                <th> Status</th>
+                <th class = "chtext-color"> Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id = "tContain">
+                <tr id = "rowData1">
+                    <td>
+                       <img src="./assets/pizza1.jpeg", alt = "pizza"> <p>Pizza</p>
+                    </td>
+
+                    <td>
+                        Main Course
+                    </td>
+
+                    <td class = "chtext-color">
+                        $1.29
+                    </td>
+
+                    <td>
+                        <button>
+                            Available
+                        </button>
+                    </td>
+                    <td>
+                        <button class = "button2">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+        <div id="popupModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span> <!-- Close button -->
+    
+    <form>
+      <p class="header-text">Add New Menu Item</p>
+
+      <p class="colored-text">Fill in the details to add a new item to the menu.</p>
+
+      <label for="name">Name: 
+        <input type="text" id="name">
+      </label>
+
+      <label for="price">Price: 
+        <input type="number" id="price">
+      </label>
+
+      <label for="category">Category: 
+        <select name="category" id="category">
+          <option value="main course">Main course</option>
+          <option value="appetizer">Appetizer</option>
+          <option value="dessert">Dessert</option>
+        </select>
+      </label>
+
+      <label>Description:
+        <textarea id = "description" placeholder="Enter description..."></textarea>
+      </label>
+
+      <div class="btn">
+        <button type="button" id="save" >Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+    
+    </div>
+
+    
+    
+
+</div>
+</body>
+</html>

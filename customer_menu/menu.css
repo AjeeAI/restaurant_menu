@@ -1,0 +1,178 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #FCFAF8;
+    
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 20px
+
+}
+.header-left{
+color: black;
+font-weight: bold;
+font-size: 25px;
+
+}
+
+.header-right{
+    display: flex;
+    gap: 20px;
+}
+
+header button{
+    background-color: transparent;
+    border: none;
+}
+
+.btn-wrap{
+    background-color: #F3EDE7;
+    height: 30px;
+    width: 150px;
+    border-radius: 5px;
+    font-weight: bold;
+    
+}
+
+.wrap{
+    background-color: #F3EDE7;
+    /* height: 30px;
+    width: 150px; */
+    border-radius: 5px;
+    font-weight: bold;
+
+}
+.body-container{
+    width: 100%;
+}
+.page-container{
+    /* width: 70%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-container h1{
+    font-weight: bold;
+}
+.page-container input{
+    width: 70%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.page-container ::placeholder{
+    display: flex;
+    gap: 10px;
+}
+
+
+.h3-div {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    
+    /* background-color: blue; */
+
+}
+h3{
+    
+    font-weight: bold;
+}
+
+.food-item{
+    width: 70%;
+    
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    /* flex-wrap: wrap; */
+    flex-shrink: initial;
+
+}
+
+.food-item-text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.food-item-text h3{
+ font-weight: bold;
+}
+
+.food-item-text p{
+    opacity: 0.7;
+    color: grey;
+}
+
+.food-item-text button{
+    color: black;
+    background-color: #F3EDE7;
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.food-item-text button:hover{
+    background-color: #fcf7f2;
+}
+.food-item img{
+    object-fit: cover;
+    height: 250px;
+    width: 350px;
+    
+    border-radius: 15px;
+
+    flex-wrap: wrap;
+}
+
+footer {
+    width: 70%;
+    display: flex;
+    justify-content: end;
+}
+
+footer button{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #EC8013;
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+}
+
+footer button:hover{
+    background-color: #ec8a27;
+}
+
+@media (max-width: 768px) {
+    .food-item {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .food-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .food-item-text {
+        width: 100%;
+        text-align: center;
+    }
+}
